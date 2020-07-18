@@ -20,4 +20,4 @@ Feature: Filtering todos
     Examples:
       | tasks                       | filter    | expected      |
       | Buy some milk, Walk the dog | Active    | Buy some milk |
-#      | Buy some milk, Walk the dog | Completed | Walk the dog  |
+      | Buy some milk, Walk the dog | Completed | Walk the dog  |

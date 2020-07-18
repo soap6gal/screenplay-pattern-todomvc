@@ -11,7 +11,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.0")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.9")
     }
 }
 
@@ -25,8 +25,8 @@ targetCompatibility = 1.8
 
 ext {
     slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.2.0'
-    serenityCucumberVersion = '2.2.0'
+    serenityCoreVersion = '2.2.9'
+    serenityCucumberVersion = '2.2.5'
     junitVersion = '4.12'
     assertJVersion = '3.8.0'
     logbackVersion = '1.2.3'
@@ -44,6 +44,7 @@ dependencies {
 }
 
 test {
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
 }

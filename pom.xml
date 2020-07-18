@@ -11,10 +11,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.2.1</serenity.version>
-        <serenity.maven.version>2.2.1</serenity.maven.version>
-        <serenity.cucumber.version>2.2.0</serenity.cucumber.version>
-        <parallel.tests>6</parallel.tests>
+        <serenity.version>2.2.9</serenity.version>
+        <serenity.maven.version>2.2.9</serenity.maven.version>
+        <serenity.cucumber.version>2.2.5</serenity.cucumber.version>
+        <parallel.tests>2</parallel.tests>
         <encoding>UTF-8</encoding>
         <serenity.test.root>net.serenitybdd.demos.todos.screenplay.features</serenity.test.root>
     </properties>
@@ -199,11 +199,12 @@
                         <version>3.0.0-M4</version>
                         <configuration>
                             <includes>
-                                <include>**/cucumber/*.java</include>
+                                <include>**/cucumber/FullTestSuite*.java</include>
                             </includes>
-                            <parallel>classes</parallel>
-                            <threadCount>${parallel.tests}</threadCount>
-                            <forkCount>${parallel.tests}</forkCount>
+                            <systemPropertyVariables>
+                                <serenity.fork.count>0${parallel.tests}</serenity.fork.count>
+                                <serenity.fork.number>0${surefire.forkNumber}</serenity.fork.number>
+                            </systemPropertyVariables>
                         </configuration>
                         <executions>
                             <execution>

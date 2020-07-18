@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features"
+        glue = "net.serenitybdd.demos.todos.cucumber.steps",
+        features = "classpath:features"
 )
 public class FullTestSuite {}
